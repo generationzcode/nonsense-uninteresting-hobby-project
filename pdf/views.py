@@ -138,7 +138,7 @@ def view_products(request):
             for v, i in enumerate(report_list):
                 if i[3] == "Cancel":
                     to_delete.append(report_list[v][4])
-                elif i[3] == "Refund":
+                """elif i[3] == "Refund":
                     original_num = find_order_index(i[4])
                     if original_num != "not there":
                         if report_list[original_num][9] == i[9]:
@@ -152,7 +152,7 @@ def view_products(request):
                             report_list[original_num][
                                 27] = report_list[original_num][27] + i[27]
                             to_delete.append(report_list[v][4])
-
+              """
             for v, i in enumerate(to_delete):
                 for m, n in enumerate(report_list):
                     if n[4] == i:
