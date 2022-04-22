@@ -333,7 +333,7 @@ def view_tally(request):
             for v, i in enumerate(report_list):
                 if i[3] == "Cancel":
                     to_delete.append(report_list[v][4])
-                elif i[3] == "Refund":
+                """elif i[3] == "Refund":
                     original_num = find_order_index(i[4])
                     if original_num != "not there":
                         if report_list[original_num][9] == i[9]:
@@ -347,7 +347,7 @@ def view_tally(request):
                             report_list[original_num][
                                 27] = report_list[original_num][27] + i[27]
                             to_delete.append(report_list[v][4])
-
+              """
             for v, i in enumerate(to_delete):
                 for m, n in enumerate(report_list):
                     if n[4] == i:
@@ -426,7 +426,7 @@ def view_tally(request):
             for i in state_rate_total2:
                 for v, m in enumerate(i):
                     state_rate_total_two2[v].append(m)
-            df['states'] = states
+            df['products'] = states
             df['totals'] = state_total
             for v, i in enumerate(tax_rates):
                 df[str(i) + "%"] = state_rate_total_two[v]
